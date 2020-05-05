@@ -1,4 +1,19 @@
+.footer {
+  background-color: #ddd; }
+
 body {
-  color: gray;
-}
+  color: gray; }
+
+.content {
+  margin-right: 16px; }
+  .content .title, .content .title-lg {
+    font-size: 24px;
+    color: orange;
+    display: block;
+    background-color: #000;
+    border: 3px solid #ddd;
+    padding: 1em;
+    margin-bottom: 2em; }
+  .content .title-lg {
+    font-size: 32px; }
 
