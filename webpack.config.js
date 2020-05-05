@@ -26,28 +26,28 @@ module.exports = {
         test: /\.(png|jpg)/,
         use: [
           {
-            loader: 'file-loader',
+            loader: "file-loader",
             options: {
               esModule: false,
-              name: 'images/[name].[ext]?' + (+new Date)
-            }
-          }
-        ]
+              name: "images/[name].[ext]?" + +new Date(),
+            },
+          },
+        ],
       },
       {
         test: /\.pug/,
         use: [
           {
-            loader: 'html-loader',
+            loader: "html-loader",
           },
           {
-            loader: 'pug-html-loader',
+            loader: "pug-html-loader",
             options: {
               pretty: true,
-            }
-          }
-        ]
-      }
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [
@@ -56,11 +56,15 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: "./src/templates/index.pug",
-      filename: "index.html"
+      filename: "index.html",
     }),
     new HtmlWebpackPlugin({
       template: "./src/templates/access.pug",
-      filename: "access.html"
+      filename: "access.html",
+    }),
+    new HtmlWebpackPlugin({
+      template: "./src/templates/members/taro.pug",
+      filename: "members/taro.html",
     }),
     new CleanWebpackPlugin(),
   ],
