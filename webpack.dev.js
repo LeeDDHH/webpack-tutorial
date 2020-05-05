@@ -4,7 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');//htmlを自動で生�
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');//dist内に必要なファイルだけ残るように整理するプラグイン
 
 module.exports = {
-  mode: "production",
+  mode: "development",
+  devtool: "source-map",
   entry: "./src/javascripts/main.js",
   output: {
     path: path.resolve(__dirname, "./dist/"),
@@ -32,6 +33,9 @@ module.exports = {
           },
           {
             loader: "css-loader",
+            options: {
+              sourceMap: true,
+            },
           },
           {
             loader: "sass-loader",
