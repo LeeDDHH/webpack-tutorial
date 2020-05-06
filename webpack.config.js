@@ -39,13 +39,26 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpg)/,
+        test: /\.(png|jpg|jpeg)/,
         use: [
           {
             loader: "file-loader",
             options: {
               esModule: false,
               name: "images/[name].[ext]?" + +new Date(),
+            },
+          },
+          {
+            loader: "image-webpack-loader",
+            options: {
+              mozjpeg: {
+                progressive: true,
+                quality: 65,
+              },
+              pngquant: {
+                quality: [0.65, 0.9],
+                speed: 4,
+              },
             },
           },
         ],
